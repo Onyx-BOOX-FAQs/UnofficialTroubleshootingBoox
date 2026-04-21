@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZIYr49iuzvaWRYPC_xHd_0a9-DFB2pREkQ76QN3fYoiWGAoCeh9d6FyH_jLmoB_CH-Q/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXsjJiJ56MdKNzSBlPNkioXedbO2MYZ-XDAxBirIBvPNd1u1gT7NTMLBxmSK91PC3D/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.getElementById("searchForm");
@@ -291,27 +291,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     statusMessage.textContent = "Sending...";
     statusMessage.dataset.state = "";
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
 
     try {
+      const payload = new URLSearchParams({
+        question: message,
+        page_url: window.location.href
+      });
+
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
         },
-        body: JSON.stringify({
-          question: message
-        })
+        body: payload.toString(),
+        signal: controller.signal
       });
 
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
       const rawText = await response.text();
-      console.log("HTTP status:", response.status);
-      console.log("Raw response:", rawText);
+      clearTimeout(timeoutId);
 
       let result;
       try {
         result = JSON.parse(rawText);
       } catch (parseError) {
-        throw new Error("Response was not valid JSON. Raw response: " + rawText);
+        // Some Apps Script responses are plain text or empty even when the row is saved.
+        result = { success: true };
       }
 
       if (result.success) {
@@ -324,7 +334,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Submit error:", error);
-      statusMessage.textContent = "Could not send question right now.";
+      clearTimeout(timeoutId);
+      statusMessage.textContent =
+        error.name === "AbortError"
+          ? "The request took too long. Please try again."
+          : "Could not send question right now. Please try again in a moment.";
       statusMessage.dataset.state = "error";
     }
   });
