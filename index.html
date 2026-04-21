@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOOX Troubleshooting Guide</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-badge">B</div>
+        <div>BOOX Troubleshooting</div>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#categories">Categories</a>
+        <a href="#popular">Popular Issues</a>
+        <a href="#guide">Start Here</a>
+        <a href="#feedback">Ask a Question</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">Simple help for common BOOX problems</div>
+          <h1>Find the right fix before you try a reset.</h1>
+          <p>
+            Use the categories below to match your problem, then open a guide with clear steps for charging, startup, screen, software, connectivity, stylus, account, and battery issues.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#categories">Browse Categories</a>
+            <a class="btn btn-secondary" href="#popular">View Popular Issues</a>
+          </div>
+
+          <form class="search-wrap" id="searchForm">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search frozen screen, update failed, not charging, Wi-Fi, or password"
+              aria-label="Search troubleshooting topics"
+              aria-autocomplete="list"
+              aria-controls="searchSuggestions"
+              aria-expanded="false"
+              autocomplete="off"
+            />
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+          <div
+            id="searchSuggestions"
+            class="search-suggestions"
+            role="listbox"
+            aria-label="Search suggestions"
+            hidden
+          ></div>
+          <p id="searchEmptyMessage" class="search-empty-message" hidden aria-live="polite">No matching troubleshooting pages found.</p>
+        </div>
+
+        <div class="hero-side">
+          <div class="panel">
+            <h3>Start here</h3>
+            <div class="feature-list compact-list">
+              <div class="feature-item">
+                <span>1</span>
+                <div>
+                  <strong>Match the symptom</strong>
+                  <p>Pick the category that sounds closest to what your device is doing right now.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span>2</span>
+                <div>
+                  <strong>Try the safest steps first</strong>
+                  <p>Each guide starts with checks that are low risk and easy to test.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span>3</span>
+                <div>
+                  <strong>Stop when hardware looks damaged</strong>
+                  <p>Swelling, liquid damage, or a cracked screen usually need repair, not more troubleshooting.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Quick reminders</h3>
+            <div class="stats">
+              <div class="stat">
+                <strong>8</strong>
+                <span>Categories</span>
+              </div>
+              <div class="stat">
+                <strong>10</strong>
+                <span>Issue guides</span>
+              </div>
+              <div class="stat">
+                <strong>Low risk</strong>
+                <span>Steps first</span>
+              </div>
+            </div>
+            <p class="muted-text panel-note">
+              If a guide mentions data loss, backup options, or a factory reset, read the warning section before continuing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Troubleshooting categories</h2>
+            <p>Choose the area that best matches the problem you want to fix.</p>
+          </div>
+        </div>
+
+        <div class="grid category-grid" id="categoryGrid">
+          <a class="card searchable-card" href="categories/power.html" data-search="power charging startup logo device wont turn on not charging boot">
+            <div class="card-icon">&#x23FB;</div>
+            <h3>Power and Charging</h3>
+            <p>For devices that will not turn on, charge slowly, stay on the logo screen, or show no response.</p>
+            <div class="pill-row">
+              <span class="pill">Power</span>
+              <span class="pill">Charging</span>
+              <span class="pill">Boot</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/screen.html" data-search="screen display frozen black ghosting touch refresh">
+            <div class="card-icon">&#x1F5B5;</div>
+            <h3>Screen and Display</h3>
+            <p>For frozen screens, black display concerns, refresh problems, ghosting, or strange screen behavior.</p>
+            <div class="pill-row">
+              <span class="pill">Frozen</span>
+              <span class="pill">Refresh</span>
+              <span class="pill">Display</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/software.html" data-search="software update firmware slow app crash failed update">
+            <div class="card-icon">SW</div>
+            <h3>Software and Updates</h3>
+            <p>For firmware errors, failed updates, app problems, and BOOX behavior that changed after software changes.</p>
+            <div class="pill-row">
+              <span class="pill">Firmware</span>
+              <span class="pill">Apps</span>
+              <span class="pill">Updates</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/connectivity.html" data-search="wifi bluetooth sync network internet pairing cloud">
+            <div class="card-icon">WF</div>
+            <h3>Wi-Fi and Connectivity</h3>
+            <p>For network setup, Bluetooth pairing, syncing, and internet access problems.</p>
+            <div class="pill-row">
+              <span class="pill">Wi-Fi</span>
+              <span class="pill">Bluetooth</span>
+              <span class="pill">Sync</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/stylus.html" data-search="stylus pen touch writing note lag missed strokes">
+            <div class="card-icon">ST</div>
+            <h3>Stylus and Touch</h3>
+            <p>For pen response issues, handwriting lag, missed strokes, and touch input that does not feel right.</p>
+            <div class="pill-row">
+              <span class="pill">Stylus</span>
+              <span class="pill">Touch</span>
+              <span class="pill">Notes</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/accounts.html" data-search="account password lock login forgot password locked out">
+            <div class="card-icon">AC</div>
+            <h3>Account and Lock Issues</h3>
+            <p>For forgotten passwords, lock-screen access problems, and account concerns that block normal use.</p>
+            <div class="pill-row">
+              <span class="pill">Password</span>
+              <span class="pill">Login</span>
+              <span class="pill">Lock</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/battery.html" data-search="battery drain overheating standby power save charging">
+            <div class="card-icon">&#128267;</div>
+            <h3>Battery Problems</h3>
+            <p>For fast battery drain, overheating, weak standby time, and battery health concerns.</p>
+            <div class="pill-row">
+              <span class="pill">Drain</span>
+              <span class="pill">Heat</span>
+              <span class="pill">Standby</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+
+          <a class="card searchable-card" href="categories/reset.html" data-search="factory reset recovery wipe data last resort support">
+            <div class="card-icon">RS</div>
+            <h3>Reset and Recovery</h3>
+            <p>For last-resort recovery steps when the usual fixes have already failed.</p>
+            <div class="pill-row">
+              <span class="pill">Reset</span>
+              <span class="pill">Recovery</span>
+              <span class="pill">Warnings</span>
+            </div>
+            <span class="card-link">Open category &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="popular">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Popular troubleshooting pages</h2>
+            <p>These are the most common BOOX problems people usually want to solve first.</p>
+          </div>
+        </div>
+
+        <div class="issues-list-simple" id="issueGrid">
+          <article class="issue-row searchable-card" data-href="issues/device-wont-turn-on.html" data-search="device wont turn on no power black screen battery dead">
+            <span class="issue-row-icon" aria-hidden="true">&#x23FB;</span>
+            <a class="issue-row-link" href="issues/device-wont-turn-on.html">Device will not turn on</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/stuck-on-logo.html" data-search="stuck on logo startup boot loop boox logo">
+            <span class="issue-row-icon" aria-hidden="true">LG</span>
+            <a class="issue-row-link" href="issues/stuck-on-logo.html">Device stuck on BOOX logo</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/not-charging.html" data-search="not charging cable charger port battery no charge">
+            <span class="issue-row-icon" aria-hidden="true">&#9889;</span>
+            <a class="issue-row-link" href="issues/not-charging.html">Device not charging properly</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/frozen-screen.html" data-search="frozen screen touch not responding display stuck">
+            <span class="issue-row-icon" aria-hidden="true">FR</span>
+            <a class="issue-row-link" href="issues/frozen-screen.html">Frozen screen or no response</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/update-failed.html" data-search="update failed firmware install error software">
+            <span class="issue-row-icon" aria-hidden="true">UP</span>
+            <a class="issue-row-link" href="issues/update-failed.html">Update failed</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/wifi-not-connecting.html" data-search="wifi not connecting network internet router cannot join">
+            <span class="issue-row-icon" aria-hidden="true">WF</span>
+            <a class="issue-row-link" href="issues/wifi-not-connecting.html">Wi-Fi not connecting</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/bluetooth-not-working.html" data-search="bluetooth not working pairing accessory keyboard speaker">
+            <span class="issue-row-icon" aria-hidden="true">BL</span>
+            <a class="issue-row-link" href="issues/bluetooth-not-working.html">Bluetooth not working</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/stylus-not-working.html" data-search="stylus not working pen not writing touch lag">
+            <span class="issue-row-icon" aria-hidden="true">PN</span>
+            <a class="issue-row-link" href="issues/stylus-not-working.html">Stylus not working</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/forgot-password.html" data-search="forgot password lock screen account login reset">
+            <span class="issue-row-icon" aria-hidden="true">LK</span>
+            <a class="issue-row-link" href="issues/forgot-password.html">Forgot password or locked out</a>
+          </article>
+
+          <article class="issue-row searchable-card" data-href="issues/battery-drain.html" data-search="battery drain fast battery loss overheating standby">
+            <span class="issue-row-icon" aria-hidden="true">DR</span>
+            <a class="issue-row-link" href="issues/battery-drain.html">Battery draining too fast</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide">
+      <div class="container two-col">
+        <div class="notice">
+          <h3>Before you start troubleshooting</h3>
+          <ul>
+            <li>Use a known-good cable and charger before assuming the device is dead.</li>
+            <li>Give BOOX devices extra time after a full battery drain or large update.</li>
+            <li>Do not press hard on the E Ink display while testing the screen.</li>
+            <li>Write down the model name and recent changes if you may need support later.</li>
+          </ul>
+        </div>
+
+        <div class="notice warn">
+          <h3>When to stop and get help</h3>
+          <ul>
+            <li>Stop if the battery looks swollen, the device gets unusually hot, or you smell burning.</li>
+            <li>Stop if there is liquid damage, major impact damage, or a cracked screen panel.</li>
+            <li>Be careful with factory resets because they can erase local data.</li>
+            <li>Use BOOX support when a guide says the next step may need service or model-specific recovery.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback">
+      <div class="container feedback-grid">
+        <div class="feedback-box">
+          <h3>Ask about a problem not listed here</h3>
+          <p>If your issue is not covered yet, send a short description and it can be added to the guide later.</p>
+
+          <form class="feedback-form" id="questionForm">
+            <textarea
+              id="questionInput"
+              placeholder="Describe the BOOX problem you want help with..."
+              aria-label="Question or suggestion"
+            ></textarea>
+            <button class="btn btn-primary" type="submit">Send Question</button>
+            <div class="feedback-note">
+              Keep your message brief and avoid including personal account details.
+            </div>
+            <div class="status-message" id="statusMessage" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="feedback-box">
+          <h3>Most useful details to include</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span>1</span>
+              <div>
+                <strong>Device model</strong>
+                <p>Include the BOOX model if you know it so the guide can be more specific.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span>2</span>
+              <div>
+                <strong>What changed</strong>
+                <p>Mention whether the issue started after charging, an update, a fall, or a reset attempt.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span>3</span>
+              <div>
+                <strong>What you already tried</strong>
+                <p>This helps avoid repeating steps that did not work.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-box">
+        <h4>Independent resource</h4>
+        <p>This guide is not affiliated with or endorsed by Onyx BOOX.</p>
+      </div>
+
+      <div class="footer-box">
+        <h4>Use care</h4>
+        <p>Troubleshooting steps may include charging tests, restarts, or reset decisions that affect saved data.</p>
+      </div>
+
+      <div class="footer-box">
+        <h4>Privacy</h4>
+        <p>Do not include passwords, personal documents, or payment details when sending a question.</p>
+      </div>
+
+      <div class="footer-box">
+        <h4>Support</h4>
+        <p>If the device has physical damage or repeated startup failures, official BOOX support is usually the safest next step.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="bottom-note">BOOX Troubleshooting Guide</p>
+    </div>
+  </footer>
+
+  <button class="fab" id="scrollToFeedback" aria-label="Go to ask a question section">?</button>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
